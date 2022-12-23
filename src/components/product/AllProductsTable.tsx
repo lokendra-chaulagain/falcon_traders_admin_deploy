@@ -52,7 +52,8 @@ export default function AllProductsTable({ products, deleteProduct }: any) {
                       ​
                       <div className="banner_table_image_div">
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${product.image}`}
+                          // src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${product.image}`}
+                          src={`${`product.image`}`}
                           quality={50}
                           layout="fill"
                           objectFit="cover"

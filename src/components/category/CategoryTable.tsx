@@ -40,7 +40,8 @@ export default function CategoryTable({ deleteCategory, categories, setIsUpdated
                       ​
                       <div className="banner_table_image_div">
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${category.image}`}
+                          // src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${category.image}`}
+                          src={`${`category.image`}`}
                           quality={50}
                           layout="fill"
                           objectFit="cover"

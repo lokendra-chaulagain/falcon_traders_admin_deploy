@@ -50,7 +50,8 @@ export default function EventTable({ blogs, deleteBlog }: any) {
                       ​
                       <div className="banner_table_image_div">
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${data.image}`}
+                          src={`${`data.image`}`}
+                          // src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${data.image}`}
                           quality={50}
                           layout="fill"
                           objectFit="cover"
