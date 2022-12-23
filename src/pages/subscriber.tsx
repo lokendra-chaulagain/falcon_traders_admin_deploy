@@ -23,18 +23,16 @@ function Subscriber() {
   };
 
   const [subscribers, setSubscribers] = useState([]);
-  const fetchAllSubscriber = async () => {
-    try {
-      let res = await CallApi.fetchData(`subscriber`);
-      res && setSubscribers(res);
-      setIsUpdated(0);
-    } catch (error) {
-      console.log(error);
-      somethingWentWrong();
-    }
-  };
-
   useEffect(() => {
+    const fetchAllSubscriber = async () => {
+      try {
+        let res = await CallApi.fetchData(`subscriber`);
+        res && setSubscribers(res);
+        setIsUpdated(5);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchAllSubscriber();
   }, [isUpdated]);
 

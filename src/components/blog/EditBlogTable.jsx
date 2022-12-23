@@ -30,7 +30,7 @@ const EditBlogTable = ({ singleBlog, id }) => {
   useEffect(() => {
     console.log(singleBlog);
     reset(singleBlog);
-  }, [singleBlog]);
+  }, [reset, singleBlog]);
 
   const [images, setImages] = useState();
   const onChange = (imageList) => {
@@ -39,7 +39,7 @@ const EditBlogTable = ({ singleBlog, id }) => {
 
   useEffect(() => {
     reset(singleBlog);
-  }, [singleBlog]);
+  }, [reset, singleBlog]);
 
   const updateBlog = async () => {
     const formData = new FormData();

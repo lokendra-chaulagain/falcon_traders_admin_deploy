@@ -10,17 +10,16 @@ const Id = () => {
   const id = router.query.id;
 
   const [singleBlog, setSingleBlog] = useState({});
-  const fetchSingleBlog = async () => {
-    try {
-      let res = await CallApi.EditData(`blog/${id}`);
-      setSingleBlog(res);
-      setIsUpdated(8);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const fetchSingleBlog = async () => {
+      try {
+        let res = await CallApi.EditData(`blog/${id}`);
+        setSingleBlog(res);
+        setIsUpdated(8);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchSingleBlog();
   }, [isUpdated, id]);
 

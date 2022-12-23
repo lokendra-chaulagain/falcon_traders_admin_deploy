@@ -22,7 +22,7 @@ export default function EditBannerDialog({ singleBanner, setIsUpdated, id }) {
 
   useEffect(() => {
     reset(singleBanner);
-  }, [singleBanner]);
+  }, [reset, singleBanner]);
 
   const [images, setImages] = useState();
   const onChange = (imageList) => {

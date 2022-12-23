@@ -21,7 +21,7 @@ const EditReviewTable = ({ singleReview, setIsUpdated }: any) => {
 
   useEffect(() => {
     reset(singleReview);
-  }, [singleReview]);
+  }, [reset, singleReview]);
 
   const updateReview = async () => {
     try {

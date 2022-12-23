@@ -22,7 +22,7 @@ export default function ReviewTable({ deleteReview, reviews, setIsUpdated }: any
           <tbody>
             {reviews &&
               reviews.map((review: any, index: any) => (
-                <tr className="customPrimaryTxtColor custom_table_hover ">
+                <tr key={index} className="customPrimaryTxtColor custom_table_hover ">
                   <th scope="row">1</th>
                   <td>{review.name}</td>
                   <td>{review.position}</td>

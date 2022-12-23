@@ -8,26 +8,23 @@ import Api from "../../../service/Api.js";
 let CallApi = new Api();
 
 const Id = () => {
-  const { somethingWentWrong } = useContext(MiscellaneousContext);
   const [isUpdated, setIsUpdated] = useState(0);
   const router = useRouter();
   const id = router.query.id;
 
   const [singleReview, setSingleReview] = useState({});
-  const fetchSingleReview = async (id: any) => {
-    try {
-      let res = await CallApi.EditData(`review/${id}`);
-
-      setSingleReview(res);
-      setIsUpdated(1);
-      console.log("Update success");
-    } catch (error) {
-      console.log(error);
-      somethingWentWrong();
-    }
-  };
-
   useEffect(() => {
+    const fetchSingleReview = async (id: any) => {
+      try {
+        let res = await CallApi.EditData(`review/${id}`);
+
+        setSingleReview(res);
+        setIsUpdated(1);
+        console.log("Update success");
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchSingleReview(id);
   }, [isUpdated, id]);
 

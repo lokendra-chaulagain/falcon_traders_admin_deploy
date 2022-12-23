@@ -4,7 +4,6 @@ import ColorTable from "../components/color/ColorTable";
 import Header from "../components/Header";
 import SizeTable from "../components/size/SizeTable";
 import { MiscellaneousContext } from "../../context/MiscellaneousContext";
-import axios from "axios";
 import Api from "../../service/Api.js";
 let CallApi = new Api();
 
@@ -15,7 +14,6 @@ function Category() {
   const deleteCategory = async (id: any) => {
     try {
       let res = await CallApi.deleteData(`category/${id}`);
-
       setIsUpdated(1);
       deleteSuccess();
       console.log("Category deleted success");
@@ -59,7 +57,6 @@ function Category() {
       setIsUpdated(0);
     } catch (error) {
       console.log(error);
-      somethingWentWrong();
     }
   };
 
@@ -71,7 +68,6 @@ function Category() {
       setIsUpdated(0);
     } catch (error) {
       console.log(error);
-      somethingWentWrong();
     }
   };
 
@@ -83,7 +79,6 @@ function Category() {
       setIsUpdated(0);
     } catch (error) {
       console.log(error);
-      somethingWentWrong();
     }
   };
 

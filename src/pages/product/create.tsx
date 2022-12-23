@@ -3,7 +3,7 @@ import AddProductTable from "../../components/product/AddProductTable";
 import Api from "../../../service/Api.js";
 let CallApi = new Api();
 
-export default function create() {
+export default function Create() {
   const [isUpdated, setIsUpdated] = useState(0);
   const [categories, setCategories] = useState([]);
   const [colors, setColors] = useState([]);

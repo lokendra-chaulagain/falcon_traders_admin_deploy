@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import EditProductTable from "../../components/product/EditProductTable";
-import axios from "axios";
 import { useRouter } from "next/router";
 import Api from "../../../service/Api.js";
 let CallApi = new Api();
@@ -13,33 +12,35 @@ const Id = () => {
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
 
-  const fetchAll = async () => {
-    try {
-      const res1 = await CallApi.fetchData(`category`);
-      const res2 = await CallApi.fetchData(`color`);
-      const res3 = await CallApi.fetchData(`size`);
-      setCategories(res1);
-      setColors(res2);
-      setSizes(res3);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  useEffect(() => {
+    const fetchAll = async () => {
+      try {
+        const res1 = await CallApi.fetchData(`category`);
+        const res2 = await CallApi.fetchData(`color`);
+        const res3 = await CallApi.fetchData(`size`);
+        setCategories(res1);
+        setColors(res2);
+        setSizes(res3);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchAll();
+  }, []);
 
   const [singleProduct, setSingleProduct] = useState({});
-  const fetchSingleProduct = async () => {
-    try {
-      let res = await CallApi.EditData(`product/${id}`);
-      setSingleProduct(res);
-      setIsUpdated(8);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
+    const fetchSingleProduct = async () => {
+      try {
+        let res = await CallApi.EditData(`product/${id}`);
+        setSingleProduct(res);
+        setIsUpdated(8);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchSingleProduct();
-    fetchAll();
   }, [isUpdated, id]);
 
   return (

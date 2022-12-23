@@ -19,7 +19,7 @@ export default function MailDialogBox() {
   const { mails, isUpdated, fetchAllMails } = React.useContext(MailContext);
   useEffect(() => {
     fetchAllMails();
-  }, [isUpdated]);
+  }, [fetchAllMails, isUpdated]);
 
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {

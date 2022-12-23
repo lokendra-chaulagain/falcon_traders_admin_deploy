@@ -6,13 +6,14 @@ import Header from "../Header";
 
 export default function EditMailTable() {
   const { fetchSingleMail, singleMail } = useContext(MailContext);
+  
   const router = useRouter();
   console.log(router);
   const id = router.query.id;
 
   useEffect(() => {
     fetchSingleMail(id);
-  }, [id]);
+  }, [fetchSingleMail, id]);
 
   return (
     <>

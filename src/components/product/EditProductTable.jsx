@@ -25,7 +25,7 @@ export default function EditProductTable({ categories, sizes, colors, singleProd
   useEffect(() => {
     console.log(singleProduct);
     reset(singleProduct);
-  }, [singleProduct]);
+  }, [reset, singleProduct]);
 
   const [images, setImages] = useState();
   const onChange = (imageList) => {

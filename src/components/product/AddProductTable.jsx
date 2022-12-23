@@ -179,7 +179,7 @@ export default function AddProductTable({ categories, colors, sizes, setIsUpdate
             <div className="choose_size_product_wrapper">
               {sizes &&
                 sizes.map((size, index) => (
-                  <div className="form-check form-check-inline ">
+                  <div key={index} className="form-check form-check-inline ">
                     <input
                       {...register("size", { required: "size is required" })}
                       className="form-check-input"

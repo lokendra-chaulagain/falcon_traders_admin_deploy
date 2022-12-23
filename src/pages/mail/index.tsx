@@ -29,7 +29,6 @@ function Mail() {
       setIsUpdated(0);
     } catch (error) {
       console.log(error);
-      somethingWentWrong();
     }
   };
 
