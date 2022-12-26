@@ -38,8 +38,8 @@ export default function BannerTable({ banners, deleteBanner, setIsUpdated }: any
                     ​
                     <div className="banner_table_image_div">
                       <Image
-                        // src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${banner.image}`}
-                        src={`${`banner.image`}`}
+                        src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${banner.image}`}
+                        // src={`${`banner.image`}`}
                         quality={50}
                         layout="fill"
                         objectFit="cover"
